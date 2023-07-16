@@ -17,18 +17,16 @@ interface NewsData {
 }
 
 function News() {
-  const API_KEY = "91f727ebc8b6488286c178cd38853d5d";
-  const query = "Technology";
-  const queryParam = query.length > 0 ? `q=${query}` : "";
-  const BASE_URL = `https://newsapi.org/v2/everything?${queryParam}`;
-  // const asf = "top-headlines?country=in,category=business";
-  // const xyz = "?${queryParam}&apiKey=${API_KEY}";
-
   const [data, setData] = useState<NewsData>({
     status: "",
     totalResults: 0,
     articles: [],
   });
+
+  const API_KEY = "91f727ebc8b6488286c178cd38853d5d";
+  const query = "Technology";
+  const queryParam = query.length > 0 ? `q=${query}` : "";
+  const BASE_URL = `https://newsapi.org/v2/everything?${queryParam}`;
 
   useEffect(() => {
     fetch(BASE_URL, {

@@ -33,8 +33,8 @@ function Navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              {newsCategories.map((category) => (
-                <li className="nav-item">
+              {newsCategories.map((category, index) => (
+                <li key={index} className="nav-item">
                   <a className="nav-link" href="#">
                     {category}
                   </a>
